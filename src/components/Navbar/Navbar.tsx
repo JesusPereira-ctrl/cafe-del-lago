@@ -53,7 +53,7 @@ const Navbar = () => {
             {/* Espacio para logo - reemplazar con imagen real */}
             <div className='bg-black w-16 h-16 bg-accent rounded-full flex items-center justify-center'>
               <span className='text-primary font-serif text-xl font-bold'>
-                <img src={logo} alt='dsd' />
+                <img src={logo} alt='logo-cafeteria' className='w-16 h-16' />
               </span>
             </div>
             <span className='font-serif text-2xl md:text-3xl font-bold text-primary'>
