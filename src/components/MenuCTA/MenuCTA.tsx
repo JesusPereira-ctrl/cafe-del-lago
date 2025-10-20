@@ -13,7 +13,7 @@ const MenuCTA = () => {
             Explora nuestra selección completa de cafés, pastelería y desayunos
           </p>
 
-          <a href='../../../public/menu/menu.pdf#zoom=250' download>
+          <a href='/menu/menu.pdf#zoom=250' download>
             <Button size='lg' className='text-lg px-8 py-6 hover-lift'>
               <FileText className='mr-2 h-5 w-5' />
               Descargar Menú PDF
