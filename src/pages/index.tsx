@@ -1,27 +1,85 @@
-import Navbar from '@/components/Navbar/Navbar';
-import Hero from '@/components/Hero/Hero';
-import About from '@/components/About/About';
-import Services from '@/components/Services/Services';
-import MenuCTA from '@/components/MenuCTA/MenuCTA';
-import Gallery from '@/components/Gallery/Gallery';
-import Location from '@/components/Location/Location';
-import Contact from '@/components/Contact/Contact';
-import Footer from '@/components/Footer/Footer';
+import React, { Suspense } from 'react';
+
+// Lazy loading de componentes
+const Navbar = React.lazy(() => import('@/components/Navbar/Navbar'));
+const Hero = React.lazy(() => import('@/components/Hero/Hero'));
+const About = React.lazy(() => import('@/components/About/About'));
+const Services = React.lazy(() => import('@/components/Services/Services'));
+const MenuCTA = React.lazy(() => import('@/components/MenuCTA/MenuCTA'));
+const Gallery = React.lazy(() => import('@/components/Gallery/Gallery'));
+const Location = React.lazy(() => import('@/components/Location/Location'));
+const Contact = React.lazy(() => import('@/components/Contact/Contact'));
+const Footer = React.lazy(() => import('@/components/Footer/Footer'));
+
+// Skeletons / placeholders
+const NavbarSkeleton = () => (
+  <div className='h-16 bg-gray-200 animate-pulse'></div>
+);
+const HeroSkeleton = () => (
+  <div className='h-screen bg-gray-300 animate-pulse'></div>
+);
+const AboutSkeleton = () => (
+  <div className='h-64 bg-gray-200 animate-pulse my-8'></div>
+);
+const ServicesSkeleton = () => (
+  <div className='h-64 bg-gray-200 animate-pulse my-8'></div>
+);
+const MenuCTASkeleton = () => (
+  <div className='h-32 bg-gray-200 animate-pulse my-8'></div>
+);
+const GallerySkeleton = () => (
+  <div className='h-96 bg-gray-300 animate-pulse my-8'></div>
+);
+const LocationSkeleton = () => (
+  <div className='h-64 bg-gray-200 animate-pulse my-8'></div>
+);
+const ContactSkeleton = () => (
+  <div className='h-64 bg-gray-200 animate-pulse my-8'></div>
+);
+const FooterSkeleton = () => (
+  <div className='h-24 bg-gray-200 animate-pulse mt-8'></div>
+);
 
 export const Index = () => {
   return (
     <div className='min-h-screen'>
-      <Navbar />
+      <Suspense fallback={<NavbarSkeleton />}>
+        <Navbar />
+      </Suspense>
+
       <main>
-        <Hero />
-        <About />
-        <Services />
-        <MenuCTA />
-        <Gallery />
-        <Location />
-        <Contact />
+        <Suspense fallback={<HeroSkeleton />}>
+          <Hero />
+        </Suspense>
+
+        <Suspense fallback={<AboutSkeleton />}>
+          <About />
+        </Suspense>
+
+        <Suspense fallback={<ServicesSkeleton />}>
+          <Services />
+        </Suspense>
+
+        <Suspense fallback={<MenuCTASkeleton />}>
+          <MenuCTA />
+        </Suspense>
+
+        <Suspense fallback={<GallerySkeleton />}>
+          <Gallery />
+        </Suspense>
+
+        <Suspense fallback={<LocationSkeleton />}>
+          <Location />
+        </Suspense>
+
+        <Suspense fallback={<ContactSkeleton />}>
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+
+      <Suspense fallback={<FooterSkeleton />}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
