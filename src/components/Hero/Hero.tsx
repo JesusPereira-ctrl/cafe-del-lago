@@ -12,6 +12,7 @@ const Hero = () => {
           src={heroImage}
           alt='Café del Lago interior con vista al lago'
           className='w-full h-full object-cover'
+          loading='eager'
         />
         <div className='absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-background/80' />
       </div>
