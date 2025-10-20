@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cafe-del-lago-web.netlify.app/sitemap.xml
