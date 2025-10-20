@@ -12,17 +12,13 @@ const MenuCTA = () => {
           <p className='text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto'>
             Explora nuestra selección completa de cafés, pastelería y desayunos
           </p>
-          <Button
-            size='lg'
-            className='text-lg px-8 py-6 hover-lift'
-            onClick={() => {
-              // Placeholder - se actualizará cuando se suba el PDF
-              alert('Menú próximamente disponible');
-            }}
-          >
-            <FileText className='mr-2 h-5 w-5' />
-            Ver Menú Completo
-          </Button>
+
+          <a href='../../../public/menu/menu.pdf#zoom=250' download>
+            <Button size='lg' className='text-lg px-8 py-6 hover-lift'>
+              <FileText className='mr-2 h-5 w-5' />
+              Descargar Menú PDF
+            </Button>
+          </a>
         </div>
       </div>
     </section>
