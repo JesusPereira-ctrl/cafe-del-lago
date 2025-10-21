@@ -14,7 +14,6 @@ export const CardContact = ({ icon, title, content, url }: Props) => {
       href={url}
       className='bg-card p-8 rounded-lg text-center hover-lift border border-border group'
       style={{ animationDelay: `${10 * 0.1}s` }}
-      target='_blank'
     >
       <div className='inline-flex items-center justify-center w-16 h-16 bg-accent rounded-full mb-6 group-hover:bg-primary transition-colors duration-300'>
         <Icon className='w-8 h-8 text-primary group-hover:text-primary-foreground transition-colors duration-300' />
